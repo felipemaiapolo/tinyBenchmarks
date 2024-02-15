@@ -1,4 +1,4 @@
-# tinyBenchmarks: tutorials
+# tinyBenchmarks tutorials
 
 This repository contains Jupyter notebooks that guide you through the process of training your own IRT models, finding anchor points, and estimating the performance of Large Language Models (LLMs) using Python 3.11.7.
 
