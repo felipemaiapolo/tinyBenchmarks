@@ -2,7 +2,7 @@
 
 This package is based on the ideas presented in
 
-**Citation goes here** ([check arXiv version here](https://arxiv.org)). 
+[Citation goes here](https://arxiv.org). 
 
 Please cite us in the following way
 
