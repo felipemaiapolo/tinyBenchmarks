@@ -30,6 +30,7 @@ $ pip install git+https://github.com/felipemaiapolo/tinyBenchmarks
 ## Estimating the performance of a new LLM
 
 ```python
+import numpy as np
 import tinyBenchmarks as tb
 
 ### Parameters
