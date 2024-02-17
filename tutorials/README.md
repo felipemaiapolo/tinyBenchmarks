@@ -26,7 +26,7 @@ After ensuring you have the correct Python version, install all the required pac
 pip install -r requirements.txt
 ```
 
-If you are running `training_irt.ipynb`, install `py_irt` (check the original package [here](https://github.com/nd-ball/py-irt)) with our modifications. Start installing [Poetry](https://python-poetry.org/docs/#installation) and then
+If you are running `training_irt.ipynb`, install `py_irt` with our modifications  (check the original package [here](https://github.com/nd-ball/py-irt)). Start installing [Poetry](https://python-poetry.org/docs/#installation) and then
 
 ```shell
 git clone https://github.com/felipemaiapolo/py-irt.git
