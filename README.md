@@ -33,19 +33,12 @@ $ pip install git+https://github.com/felipemaiapolo/tinyBenchmarks
 import tinyBenchmarks as tb
 
 ### Parameters
-bench = 'lb' # chosen from possible benchmarks in ['lb', 'mmlu', 'helm_lite', 'alpaca']
-y_input = np.random.binomial(1,.5, 600) # dummy data (unidimensional numpy array)
+benchmark = 'lb' # chosen from possible benchmarks in ['lb', 'mmlu', 'helm_lite', 'alpaca']
+y = np.random.binomial(1,.5, 600) # dummy data (unidimensional numpy array)
 
 ### Evaluation
-tb.evaluate(y_input, bench)
+tb.evaluate(y, benchmark)
 ```
-
-```python
-
-```
-
-
-
 
     {'harness_truthfulqa_mc_0': {'irt': 0.5483476132190942,
       'pirt': 0.5216756041366227,
