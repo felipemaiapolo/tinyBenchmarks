@@ -1,6 +1,8 @@
+import requests
 import pickle
 import numpy as np
 from scipy.optimize import minimize
+import os
 
 ### Utility functions
 def sigmoid(z):
@@ -23,10 +25,19 @@ def fit_theta(responses_test, seen_items, A, B, theta_init=None, eps=1e-10, opti
 
 ### Evaluation function
 def evaluate(y_input, bench):
-              
+
     assert len(y_input.shape)==1, "y_input must be a unidimensional numpy array."
     assert bench in ['lb', 'mmlu', 'helm_lite', 'alpaca']
     
+    # Downloading files
+    if not os.path.isfile("tinyBenchmarks.pkl"):
+        url = "https://raw.githubusercontent.com/felipemaiapolo/tinyBenchmarks/main/tinyBenchmarks/tinyBenchmarks.pkl"
+        response = requests.get(url)
+        if response.status_code == 200:
+            # Write the content to a file
+            with open("tinyBenchmarks.pkl", "wb") as file:
+                file.write(response.content)
+
     ### Loading and creating important objects
     number_of_examples = 100
     with open('tinyBenchmarks.pkl', 'rb') as handle:
