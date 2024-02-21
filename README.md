@@ -22,7 +22,7 @@ Please check our [HuggingFace collection](https://huggingface.co/collections/fel
 
 All the datasets were obtained from our work "*tinyBenchmarks*: evaluating LLMs with fewer examples" by
 1. Finding anchor points using IRT embeddings;
-2. Choosing, over the five used random seeds, the version of the dataset that performs better on average in the test set considering the `IRT` estimate (only using anchor points). We consider the random split setup when building the tiny datasets.
+2. Choosing, over the five used random seeds, the version of the dataset that performs better on average in the test set considering the `IRT` estimate (only using anchor points). We consider the random split setup when building the tiny datasets. For HELM Lite and AlpacaEval 2.0, in which we use K-fold cross-validation in the paper, we consider the first fold as the test set.
 
 <a name="2"></a>
 ## Estimating the performance of a new LLM using our package
@@ -81,10 +81,6 @@ tb.evaluate(y, benchmark)
 We report in the following tables the average estimation error in the test set and standard deviation across LLMs.
 
 #### Open LLM Leaderboard
-
-- For the Open LLM Leaderboard: TruthfulQA, GSM8K, Winogrande, ARC, HellaSwag, and MMLU;
-- For HELM Lite: OpenbookQA, GSM(8K), MedQA, LegalBench, Math, MMLU, NarrativeQA, NaturalQA (closed-book), NaturalQA (open-book), and WMT14.
-
 
 Estimating performance for each scenario separately
 || IRT | p-IRT | gp-IRT |
