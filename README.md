@@ -17,6 +17,10 @@ Please cite us in the following way
 
 --------------
 
+## Datasets
+
+Please check our [HuggingFace's collection]([https://arxiv.org](https://huggingface.co/collections/felipemaiapolo/tinybenchmarks-65d40353d37914c4c8afc6e4)) with all tiny datasets.
+
 
 ## Installing package 
 
@@ -26,16 +30,21 @@ You can install our package by running the following commands on the terminal
 $ pip install git+https://github.com/felipemaiapolo/tinyBenchmarks
 ```
 
-
 ## Estimating the performance of a new LLM
 
+In the code 
 ```python
 import numpy as np
 import tinyBenchmarks as tb
 
 ### Parameters
-benchmark = 'lb' # choose from possible benchmarks in ['lb','mmlu','alpaca','helm_lite','truthfulqa', 'gsm8k', 'winogrande', 'arc', 'hellaswag']
-y = np.random.binomial(1,.5, 600) # dummy data (unidimensional numpy array. In this example, y has dimension 600 because we observe 100 examples from each scenario)
+benchmark = 'lb' # choose from possible benchmarks in
+                 # ['lb','mmlu','alpaca','helm_lite','truthfulqa',
+                 #  'gsm8k', 'winogrande', 'arc', 'hellaswag']
+
+y = np.random.binomial(1,.5, 600) # dummy data (unidimensional numpy array)
+                                  # In this example, y has dimension 600 because we
+                                  # observe 100 examples from each Open LLM Leaderboard scenario)
 
 ### Evaluation
 tb.evaluate(y, benchmark)
