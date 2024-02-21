@@ -19,8 +19,10 @@ Please cite us in the following way
 
 ## Datasets
 
-Please check our [HuggingFace's collection]([https://arxiv.org](https://huggingface.co/collections/felipemaiapolo/tinybenchmarks-65d40353d37914c4c8afc6e4)) with all tiny datasets.
-
+Please check our [HuggingFace's collection](https://huggingface.co/collections/felipemaiapolo/tinybenchmarks-65d40353d37914c4c8afc6e4) with tiny datasets, each one containing 100 examples. In that collection, you will find tiny versions of 
+- From the [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard): TruthfulQA, GSM8K, Winogrande, ARC, HellaSwag, and MMLU;
+- From [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval): AlpacaEval 2.0;
+- From [HELM Lite]([https://github.com/tatsu-lab/alpaca_eval](https://crfm.stanford.edu/helm/lite)): To be added.
 
 ## Installing package 
 
