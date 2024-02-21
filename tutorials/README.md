@@ -52,12 +52,5 @@ This repository contains three Jupyter notebooks that serve as tutorials:
 
 - The `.py` files included in this repository are called inside the Jupyter notebooks and are not intended to be run separately. Make sure to follow the notebooks for the full tutorial experience.
 
-## Contribution
-
-Feel free to fork this repository and submit pull requests to contribute to this project. If you encounter any issues or have suggestions, please open an issue in this repository.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 
