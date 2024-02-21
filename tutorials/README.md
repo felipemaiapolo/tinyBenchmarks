@@ -1,6 +1,6 @@
-# Python Item Response Theory Models Tutorial
+# tinyBenchmarks tutorials
 
-Welcome to the Python Item Response Theory (IRT) Models Tutorial repository. This repository contains Jupyter notebooks that guide you through the process of training your own IRT models, finding anchor points, and estimating the performance of Large Language Models (LLMs) using Python 3.11.7.
+Welcome to the "tinyBenchmarks tutorials"! This repository contains Jupyter notebooks that guide you through the process of training your own IRT models, finding anchor points, and estimating the performance of Large Language Models (LLMs).
 
 ## Getting Started
 
