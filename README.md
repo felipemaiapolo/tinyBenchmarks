@@ -1,10 +1,10 @@
 # tinyBenchmarks: evaluating LLMs with fewer examples
 
-This package is based on the ideas presented in
+Welcome to the tinyBenchmarks GitHub repository! Here you will find more information about tiny datasets, how to estimate LLM performance using them (using our Python package), and tutorials on how to obtain your tiny datasets and make cheap model evaluating using the ideas presented in
 
 [reference goes here](https://arxiv.org). 
 
-Please cite us in the following way
+If you use any material from this repository in your academic work, please cite
 
     @article{abcde,
       title={tinyBenchmarks: evaluating LLMs with fewer examples},
@@ -22,9 +22,13 @@ Please cite us in the following way
 Please check our [HuggingFace collection](https://huggingface.co/collections/felipemaiapolo/tinybenchmarks-65d40353d37914c4c8afc6e4) with tiny datasets, each one containing 100 examples. In that collection, you will find tiny versions of 
 - From the [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard): TruthfulQA, GSM8K, Winogrande, ARC, HellaSwag, and MMLU;
 - From [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval): AlpacaEval 2.0;
-- From [HELM Lite](https://github.com/tatsu-lab/alpaca_eval](https://crfm.stanford.edu/helm/lite): to be added.
+- From [HELM Lite](https://crfm.stanford.edu/helm/lite): to be added.
 
-## Installing package 
+All the datasets were obtained from our work "tinyBenchmarks: evaluating LLMs with fewer examples" by
+1. Finding anchor points using IRT embeddings;
+2. Choosing, over the five used random seeds, the version of the dataset that performs better on average in the test set considering the `IRT` estimate (only using anchor points). We consider the random split setup when building the tiny datasets.
+
+## Estimating the performance of a new LLM using our package
 
 You can install our package by running the following commands on the terminal
 
@@ -32,9 +36,8 @@ You can install our package by running the following commands on the terminal
 $ pip install git+https://github.com/felipemaiapolo/tinyBenchmarks
 ```
 
-## Estimating the performance of a new LLM
+Now, you can estimate the performance of a specific LLM on any tiny dataset or benchmark in our [HuggingFace collection](https://huggingface.co/collections/felipemaiapolo/tinybenchmarks-65d40353d37914c4c8afc6e4).
 
-In the code 
 ```python
 import numpy as np
 import tinyBenchmarks as tb
