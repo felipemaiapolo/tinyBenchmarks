@@ -15,8 +15,15 @@ If you use any material from this repository in your academic work, please cite
       publisher={publisher}
     }
 
+## Table of contents
+1. [ Datasets ](#1)
+2. [ Estimating the performance of a new LLM using our package  ](#2)
+3. [ Performance  ](#3)
+4. [ Contribution ](#4)
+5. [ License ](#5)
 --------------
 
+<a name="1"></a>
 ## Datasets
 
 Please check our [HuggingFace collection](https://huggingface.co/collections/felipemaiapolo/tinybenchmarks-65d40353d37914c4c8afc6e4) with tiny datasets, each one containing 100 examples. In that collection, you will find tiny versions of 
@@ -28,6 +35,7 @@ All the datasets were obtained from our work "tinyBenchmarks: evaluating LLMs wi
 1. Finding anchor points using IRT embeddings;
 2. Choosing, over the five used random seeds, the version of the dataset that performs better on average in the test set considering the `IRT` estimate (only using anchor points). We consider the random split setup when building the tiny datasets.
 
+<a name="2"></a>
 ## Estimating the performance of a new LLM using our package
 
 You can install our package by running the following commands on the terminal
@@ -78,47 +86,52 @@ tb.evaluate(y, benchmark)
       'pirt': 0.5393624918280722,
       'gpirt': 0.5385791650181335}}
 
-
-## Performance in the test set
+<a name="3"></a>
+## Performance 
 
 We report in the following tables the average estimation error in the test set and standard deviation across LLMs.
 
-### Open LLM Leaderboard
+#### Open LLM Leaderboard
 
-#### Estimating performance for each scenario separately
+- For the Open LLM Leaderboard: TruthfulQA, GSM8K, Winogrande, ARC, HellaSwag, and MMLU;
+- For HELM Lite: OpenbookQA, GSM(8K), MedQA, LegalBench, Math, MMLU, NarrativeQA, NaturalQA (closed-book), NaturalQA (open-book), and WMT14.
+
+
+Estimating performance for each scenario separately
 || IRT | p-IRT | gp-IRT |
 |--|--|--|--|
-| truthfulqa | 0.013 (0.010) | 0.010 (0.009) | 0.011 (0.009) |
-| gsm8k | 0.022 (0.017) | 0.029 (0.022) | 0.020 (0.017) |
-| winogrande | 0.022 (0.017) | 0.016 (0.014) | 0.015 (0.013) |
-| arc | 0.022 (0.018) | 0.017 (0.014) | 0.017 (0.013) |
-| hellaswag | 0.013 (0.016) | 0.015 (0.012) | 0.015 (0.012) |
-| mmlu | 0.024 (0.017) | 0.016 (0.015) | 0.016 (0.015) |
+| TruthfulQA | 0.013 (0.010) | 0.010 (0.009) | 0.011 (0.009) |
+| GSM8K | 0.022 (0.017) | 0.029 (0.022) | 0.020 (0.017) |
+| Winogrande | 0.022 (0.017) | 0.016 (0.014) | 0.015 (0.013) |
+| ARC | 0.022 (0.018) | 0.017 (0.014) | 0.017 (0.013) |
+| HellaSwag | 0.013 (0.016) | 0.015 (0.012) | 0.015 (0.012) |
+| MMLU | 0.024 (0.017) | 0.016 (0.015) | 0.016 (0.015) |
 
-#### Estimating performance for each scenario all at once
+Estimating performance for each scenario all at once
 || IRT | p-IRT | gp-IRT |
 |--|--|--|--|
-| truthfulqa | 0.013 (0.010) | 0.016 (0.013) | 0.011 (0.009) |
-| gsm8k | 0.022 (0.017) | 0.022 (0.017) | 0.020 (0.015) |
-| winogrande | 0.022 (0.017) | 0.011 (0.013) | 0.011 (0.011) |
-| arc | 0.022 (0.018) | 0.012 (0.010) | 0.010 (0.009) |
-| hellaswag | 0.013 (0.016) | 0.011 (0.020) | 0.011 (0.018) |
-| mmlu | 0.024 (0.018) | 0.017 (0.017) | 0.015 (0.015) |
+| TruthfulQA  | 0.013 (0.010) | 0.016 (0.013) | 0.011 (0.009) |
+| GSM8K | 0.022 (0.017) | 0.022 (0.017) | 0.020 (0.015) |
+| Winogrande | 0.022 (0.017) | 0.011 (0.013) | 0.011 (0.011) |
+| ARC | 0.022 (0.018) | 0.012 (0.010) | 0.010 (0.009) |
+| HellaSwag | 0.013 (0.016) | 0.011 (0.020) | 0.011 (0.018) |
+| MMLU | 0.024 (0.018) | 0.017 (0.017) | 0.015 (0.015) |
 
-### AlpacaEval 2.0
+#### AlpacaEval 2.0
 || IRT | p-IRT | gp-IRT |
 |--|--|--|--|
-| alpaca | 0.012 (0.015) | 0.020 (0.021) | 0.016 (0.016) |
+| AlpacaEval 2.0 | 0.012 (0.015) | 0.020 (0.021) | 0.016 (0.016) |
 
-### Helm Lite
+#### Helm Lite
 
 As we conduct 11-fold cross-validation (CV) with HELM Lite, the test set only contains three models, making the error estimate not meaningful. Please check Appendix D.2 of our paper for CV error estimates.
 
-
+<a name="4"></a>
 ## Contribution
 
 Feel free to fork this repository and submit pull requests to contribute to this project. If you encounter any issues or have suggestions, please open an issue in this repository.
 
+<a name="5"></a>
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
