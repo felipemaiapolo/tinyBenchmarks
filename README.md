@@ -79,6 +79,42 @@ tb.evaluate(y, benchmark)
       'gpirt': 0.5385791650181335}}
 
 
+## Performance in the test set
+
+We report in the following tables the average estimation error in the test set and standard deviation across LLMs.
+
+### Open LLM Leaderboard
+
+#### Estimating performance for each scenario separately
+|| IRT | p-IRT | gp-IRT |
+|--|--|--|--|
+| truthfulqa | 0.013 (0.010) | 0.010 (0.009) | 0.011 (0.009) |
+| gsm8k | 0.022 (0.017) | 0.029 (0.022) | 0.020 (0.017) |
+| winogrande | 0.022 (0.017) | 0.016 (0.014) | 0.015 (0.013) |
+| arc | 0.022 (0.018) | 0.017 (0.014) | 0.017 (0.013) |
+| hellaswag | 0.013 (0.016) | 0.015 (0.012) | 0.015 (0.012) |
+| mmlu | 0.024 (0.017) | 0.016 (0.015) | 0.016 (0.015) |
+
+#### Estimating performance for each scenario all at once
+|| IRT | p-IRT | gp-IRT |
+|--|--|--|--|
+| truthfulqa | 0.013 (0.010) | 0.016 (0.013) | 0.011 (0.009) |
+| gsm8k | 0.022 (0.017) | 0.022 (0.017) | 0.020 (0.015) |
+| winogrande | 0.022 (0.017) | 0.011 (0.013) | 0.011 (0.011) |
+| arc | 0.022 (0.018) | 0.012 (0.010) | 0.010 (0.009) |
+| hellaswag | 0.013 (0.016) | 0.011 (0.020) | 0.011 (0.018) |
+| mmlu | 0.024 (0.018) | 0.017 (0.017) | 0.015 (0.015) |
+
+### AlpacaEval 2.0
+|| IRT | p-IRT | gp-IRT |
+|--|--|--|--|
+| alpaca | 0.012 (0.015) | 0.020 (0.021) | 0.016 (0.016) |
+
+### Helm Lite
+
+As we conduct 11-fold cross-validation (CV) with HELM Lite, the test set only contains three models, making the error estimate not meaningful. Please check Appendix D.2 of our paper for CV error estimates.
+
+
 ## Contribution
 
 Feel free to fork this repository and submit pull requests to contribute to this project. If you encounter any issues or have suggestions, please open an issue in this repository.
