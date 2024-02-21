@@ -34,7 +34,7 @@ import numpy as np
 import tinyBenchmarks as tb
 
 ### Parameters
-benchmark = 'lb' # choose from possible benchmarks in ['lb', 'mmlu', 'helm_lite', 'alpaca']
+benchmark = 'lb' # choose from possible benchmarks in ['lb','mmlu','alpaca','helm_lite','truthfulqa', 'gsm8k', 'winogrande', 'arc', 'hellaswag']
 y = np.random.binomial(1,.5, 600) # dummy data (unidimensional numpy array. In this example, y has dimension 600 because we observe 100 examples from each scenario)
 
 ### Evaluation
