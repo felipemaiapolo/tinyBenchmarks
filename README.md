@@ -1,6 +1,6 @@
 # tinyBenchmarks: evaluating LLMs with fewer examples
 
-Welcome to the tinyBenchmarks GitHub repository! Here you will find more information about tiny datasets, how to estimate LLM performance using them (using our Python package), and tutorials on how to obtain your tiny datasets and make cheap model evaluating using the ideas presented in
+Welcome to the tinyBenchmarks GitHub repository! Here you will find more information about tiny datasets, how to estimate Large Language Model (LLM) performance using them (using our Python package), and tutorials on how to obtain your tiny datasets and make cheap model evaluating using the ideas presented in
 
 [reference goes here](https://arxiv.org). 
 
