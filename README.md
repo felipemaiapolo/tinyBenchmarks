@@ -78,3 +78,11 @@ tb.evaluate(y, benchmark)
       'pirt': 0.5393624918280722,
       'gpirt': 0.5385791650181335}}
 
+
+## Contribution
+
+Feel free to fork this repository and submit pull requests to contribute to this project. If you encounter any issues or have suggestions, please open an issue in this repository.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
