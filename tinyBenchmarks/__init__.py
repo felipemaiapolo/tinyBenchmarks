@@ -25,10 +25,17 @@ def fit_theta(responses_test, seen_items, A, B, theta_init=None, eps=1e-10, opti
 
 ### Evaluation function
 def evaluate(y_input, bench):
-
-    assert len(y_input.shape)==1, "y_input must be a unidimensional numpy array."
-    assert bench in ['lb', 'mmlu', 'helm_lite', 'alpaca']
     
+    number_of_examples = 100
+    lb_scenarios = ['truthfulqa', 'gsm8k', 'winogrande', 'arc', 'hellaswag']
+    benchs = ['lb', 'mmlu', 'helm_lite', 'alpaca']
+    
+    assert len(y_input.shape)==1, "y_input must be a unidimensional numpy array."
+    assert bench in benchs + lb_scenarios
+    
+    if bench in lb_scenarios: bench_name = 'lb'
+    else: bench_name = bench
+        
     # Downloading files
     if not os.path.isfile("tinyBenchmarks.pkl"):
         url = "https://raw.githubusercontent.com/felipemaiapolo/tinyBenchmarks/main/tinyBenchmarks/tinyBenchmarks.pkl"
@@ -39,17 +46,16 @@ def evaluate(y_input, bench):
                 file.write(response.content)
 
     ### Loading and creating important objects
-    number_of_examples = 100
     with open('tinyBenchmarks.pkl', 'rb') as handle:
         tinyBenchmarks = pickle.load(handle)
 
-    seen_examples = tinyBenchmarks[bench]['seen_examples']
-    examples_weights = tinyBenchmarks[bench]['examples_weights']
-    irt_parameters = tinyBenchmarks[bench]['irt_parameters']
+    seen_examples = tinyBenchmarks[bench_name]['seen_examples']
+    examples_weights = tinyBenchmarks[bench_name]['examples_weights']
+    irt_parameters = tinyBenchmarks[bench_name]['irt_parameters']
     A, B = irt_parameters['A'], irt_parameters['B']
-    optimal_lambdas = tinyBenchmarks[bench]['optimal_lambdas']
-    scenarios_position = tinyBenchmarks[bench]['scenarios_position']
-    subscenarios_position = tinyBenchmarks[bench]['subscenarios_position']
+    optimal_lambdas = tinyBenchmarks[bench_name]['optimal_lambdas']
+    scenarios_position = tinyBenchmarks[bench_name]['scenarios_position']
+    subscenarios_position = tinyBenchmarks[bench_name]['subscenarios_position']
 
     N = np.max([np.max(x) for x in scenarios_position.values()])+1
     balance_weights = np.ones(N)
@@ -58,8 +64,16 @@ def evaluate(y_input, bench):
         n_sub = len(subscenarios_position[scenario])
         for sub in subscenarios_position[scenario].keys():
             n_i = len(subscenarios_position[scenario][sub])
-        balance_weights[subscenarios_position[scenario][sub]] = N_sce/(n_sub*n_i) 
+            balance_weights[subscenarios_position[scenario][sub]] = N_sce/(n_sub*n_i) 
 
+    ### In case we use the big IRT model to estimate the performance of individual scenarios
+    if bench not in benchs:
+        scenarios = [bench]
+        ind_scenario = number_of_examples*([i for i,s in enumerate(scenarios_position.keys()) if s==bench][0])
+        seen_examples = seen_examples[ind_scenario:ind_scenario+number_of_examples]
+    else:
+        scenarios = list(scenarios_position.keys())
+        
     ### Creating vector y and estimating theta
     y = np.zeros(N)
     for i, j in enumerate(seen_examples):
@@ -70,7 +84,7 @@ def evaluate(y_input, bench):
     estimates = {}
     unseen_examples = [i for i in range(N) if i not in seen_examples]
 
-    for scenario in scenarios_position.keys():
+    for scenario in scenarios:
 
         N_sce = len(scenarios_position[scenario])
         seen_examples_sce = [s for s in seen_examples if s in scenarios_position[scenario]]
