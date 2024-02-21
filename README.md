@@ -1,26 +1,15 @@
-# tinyBenchmarks: evaluating LLMs with fewer examples
+# *tinyBenchmarks*: evaluating LLMs with fewer examples
 
-Welcome to the tinyBenchmarks GitHub repository! Here you will find more information about tiny datasets, how to estimate Large Language Model (LLM) performance using them using our Python package, and tutorials on how to obtain your own tiny datasets and make cheap model evaluating using the ideas presented in
+Welcome to the *tinyBenchmarks* GitHub repository! Here you will find more information about tiny datasets, how to estimate Large Language Model (LLM) performance using them using our Python package, and tutorials on how to obtain your own tiny datasets and make cheap model evaluating using the ideas presented in
 
 [reference goes here](https://arxiv.org). 
 
-If you use any material from this repository in your academic work, please cite
-
-    @article{abcde,
-      title={tinyBenchmarks: evaluating LLMs with fewer examples},
-      author={our names},
-      journal={journal},
-      pages={pages},
-      year={year},
-      publisher={publisher}
-    }
-
-## Table of contents
+**Table of contents**
 1. [ Datasets ](#1)
 2. [ Estimating the performance of a new LLM using our package  ](#2)
 3. [ Performance  ](#3)
-4. [ Contribution ](#4)
-5. [ License ](#5)
+4. [ Citing ](#4)
+5. [ Contribution and License ](#5)
 --------------
 
 <a name="1"></a>
@@ -31,7 +20,7 @@ Please check our [HuggingFace collection](https://huggingface.co/collections/fel
 - From [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval): AlpacaEval 2.0;
 - From [HELM Lite](https://crfm.stanford.edu/helm/lite): to be added.
 
-All the datasets were obtained from our work "tinyBenchmarks: evaluating LLMs with fewer examples" by
+All the datasets were obtained from our work "*tinyBenchmarks*: evaluating LLMs with fewer examples" by
 1. Finding anchor points using IRT embeddings;
 2. Choosing, over the five used random seeds, the version of the dataset that performs better on average in the test set considering the `IRT` estimate (only using anchor points). We consider the random split setup when building the tiny datasets.
 
@@ -127,11 +116,21 @@ Estimating performance for each scenario all at once
 As we conduct 11-fold cross-validation (CV) with HELM Lite, the test set only contains three models, making the error estimate not meaningful. Please check Appendix D.2 of our paper for CV error estimates.
 
 <a name="4"></a>
-## Contribution
+## Citing
+If you use any material from this repository in your academic work, please cite
 
-Feel free to fork this repository and submit pull requests to contribute to this project. If you encounter any issues or have suggestions, please open an issue in this repository.
+    @article{abcde,
+      title={tinyBenchmarks: evaluating LLMs with fewer examples},
+      author={our names},
+      journal={journal},
+      pages={pages},
+      year={year},
+      publisher={publisher}
+    }
 
 <a name="5"></a>
-## License
+## Contribution and License
+
+Feel free to fork this repository and submit pull requests to contribute to this project. If you encounter any issues or have suggestions, please open an issue in this repository.
 
 This project is licensed under the MIT License - see the LICENSE file for details.
