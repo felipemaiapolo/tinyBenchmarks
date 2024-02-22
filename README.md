@@ -15,7 +15,7 @@ Welcome to the [*tinyBenchmarks* GitHub repository](https://github.com/felipemai
 <a name="1"></a>
 ## Datasets
 
-Please check our [HuggingFace collection](https://huggingface.co/collections/felipemaiapolo/tinybenchmarks-65d40353d37914c4c8afc6e4) with tiny datasets, each one containing 100 examples. In that collection, you will find tiny versions of 
+Please check our [HuggingFace community](https://huggingface.co/tinyBenchmarks) with tiny datasets, each one containing 100 examples. In that collection, you will find tiny versions of 
 - From the [Open LLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard): TruthfulQA, GSM8K, Winogrande, ARC, HellaSwag, and MMLU;
 - From [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval): AlpacaEval 2.0;
 - From [HELM Lite](https://crfm.stanford.edu/helm/lite): to be added.
@@ -33,7 +33,7 @@ You can install our package by running the following commands on the terminal
 $ pip install git+https://github.com/felipemaiapolo/tinyBenchmarks
 ```
 
-Now, you can estimate the performance of a specific LLM on any tiny dataset or benchmark in our [HuggingFace collection](https://huggingface.co/collections/felipemaiapolo/tinybenchmarks-65d40353d37914c4c8afc6e4) using the code below. If you want to evaluate a new LLM on the whole Open LLM Leaderboard or HELM Lite benchmarks, please set `benchmark='lb'` or `benchmark='helm_lite'` instead of estimating the performance of individual scenarios separately. In this way, the ability parameter $\theta$ from the IRT model will be estimated using all the available data. For `benchmark='lb'` or `benchmark='helm_lite'`, the dimension of `y` should be 600 and 1000, respectively, where the correctness values must obey the following order 
+Now, you can estimate the performance of a specific LLM on any tiny dataset or benchmark in our [HuggingFace collection](https://huggingface.co/tinyBenchmarks) using the code below. If you want to evaluate a new LLM on the whole Open LLM Leaderboard or HELM Lite benchmarks, please set `benchmark='lb'` or `benchmark='helm_lite'` instead of estimating the performance of individual scenarios separately. In this way, the ability parameter $\theta$ from the IRT model will be estimated using all the available data. For `benchmark='lb'` or `benchmark='helm_lite'`, the dimension of `y` should be 600 and 1000, respectively, where the correctness values must obey the following order 
 - For the Open LLM Leaderboard: TruthfulQA, GSM8K, Winogrande, ARC, HellaSwag, and MMLU;
 - For HELM Lite: OpenbookQA, GSM(8K), MedQA, LegalBench, Math, MMLU, NarrativeQA, NaturalQA (closed-book), NaturalQA (open-book), and WMT14.
 
