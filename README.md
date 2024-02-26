@@ -1,8 +1,7 @@
 # *tinyBenchmarks*: evaluating LLMs with fewer examples
 
-Welcome to the [*tinyBenchmarks* GitHub repository](https://github.com/felipemaiapolo/tinyBenchmarks)! Here you will find more information about tiny datasets, how to estimate Large Language Model (LLM) performance using them using our Python package, a [demo](https://github.com/felipemaiapolo/tinyBenchmarks/blob/main/tinyBenchmarks_MMLU_demo.ipynb) in which we test our methods in MMLU, and [tutorials](https://github.com/felipemaiapolo/tinyBenchmarks/tree/main/tutorials) on how to obtain your own tiny datasets and make cheap model evaluation using the ideas presented in
+Welcome to the [*tinyBenchmarks* GitHub repository](https://github.com/felipemaiapolo/tinyBenchmarks)! Here you will find more information about tiny datasets, how to estimate Large Language Model (LLM) performance using them using our Python package, a [demo](https://github.com/felipemaiapolo/tinyBenchmarks/blob/main/tinyBenchmarks_MMLU_demo.ipynb) in which we test our methods in MMLU, and [tutorials](https://github.com/felipemaiapolo/tinyBenchmarks/tree/main/tutorials) on how to obtain your own tiny datasets and make cheap model evaluation using the ideas presented in [this paper](https://arxiv.org/abs/2402.14992). 
 
-[reference goes here](https://arxiv.org). 
 
 **Table of contents**
 1. [ Datasets ](#1)
@@ -115,14 +114,14 @@ As we conduct 11-fold cross-validation (CV) with HELM Lite, the test set only co
 ## Citing
 If you use any material from this repository in your academic work, please cite
 
-    @article{abcde,
-      title={tinyBenchmarks: evaluating LLMs with fewer examples},
-      author={our names},
-      journal={journal},
-      pages={pages},
-      year={year},
-      publisher={publisher}
-    }
+    @misc{polo2024tinybenchmarks,
+      title={tinyBenchmarks: evaluating LLMs with fewer examples}, 
+      author={Felipe Maia Polo and Lucas Weber and Leshem Choshen and Yuekai Sun and Gongjun Xu and Mikhail Yurochkin},
+      year={2024},
+      eprint={2402.14992},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+   }
 
 <a name="5"></a>
 ## Contribution and License
