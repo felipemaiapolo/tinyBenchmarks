@@ -111,8 +111,6 @@ psutil @ file:///work/ci_py311_2/psutil_1679337388738/work
 ptyprocess==0.7.0
 pure-eval==0.2.2
 py==1.11.0
-# Editable install with no version control (py-irt==0.4.10)
--e /home/skunk/tutorials/py-irt
 pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
 pydantic==1.9.2
 Pygments==2.15.0
