@@ -121,7 +121,7 @@ If you use any material from this repository in your academic work, please cite
       eprint={2402.14992},
       archivePrefix={arXiv},
       primaryClass={cs.CL}
-   }
+    }
 
 <a name="5"></a>
 ## Contribution and License
