@@ -114,13 +114,11 @@ As we conduct 11-fold cross-validation (CV) with HELM Lite, the test set only co
 ## Citing
 If you use any material from this repository in your academic work, please cite
 
-    @misc{polo2024tinybenchmarks,
-      title={tinyBenchmarks: evaluating LLMs with fewer examples}, 
-      author={Felipe Maia Polo and Lucas Weber and Leshem Choshen and Yuekai Sun and Gongjun Xu and Mikhail Yurochkin},
-      year={2024},
-      eprint={2402.14992},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+    @article{polo2024tinybenchmarks,
+      title={tinyBenchmarks: evaluating LLMs with fewer examples},
+      author={Polo, Felipe Maia and Weber, Lucas and Choshen, Leshem and Sun, Yuekai and Xu, Gongjun and Yurochkin, Mikhail},
+      journal={arXiv preprint arXiv:2402.14992},
+      year={2024}
     }
 
 <a name="5"></a>
