@@ -80,7 +80,7 @@ tb.evaluate(y, benchmark)
       'gpirt': 0.5385791650181335}}
 
 **Disclaimer**
-For the Open LLM Leaderboard datasets, we could not match the leaderboard numbers exactly using [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) even when seeing the whole set of items and using the version specified by the leaderboard maintainers. Moreover, for convenience, we advise users (see datasets cards on our [HuggingFace community](https://huggingface.co/tinyBenchmarks)) to use a more modern version of [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness), which can create divergences with the numbers presented in the leaderboard. We expect *tinyBenchmarks* to still work well in that case, but use our tools at your own risk.
+For the Open LLM Leaderboard datasets, we could not match the leaderboard numbers exactly using [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) even when seeing the whole set of items and using the version specified by the leaderboard maintainers. For convenience, we advise users (see datasets cards on our [HuggingFace community](https://huggingface.co/tinyBenchmarks)) to use a more modern version of [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness), which can create divergences with the numbers presented in the leaderboard. We expect *tinyBenchmarks* to still work well in that case, but use our tools at your own risk.
 
 
 <a name="3"></a>
