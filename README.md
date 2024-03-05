@@ -11,6 +11,9 @@ Welcome to the [*tinyBenchmarks* GitHub repository](https://github.com/felipemai
 3. [ Performance  ](#3)
 4. [ Citing ](#4)
 5. [ Contribution and License ](#5)
+
+
+
 --------------
 
 <a name="1"></a>
@@ -76,10 +79,14 @@ tb.evaluate(y, benchmark)
       'pirt': 0.5393624918280722,
       'gpirt': 0.5385791650181335}}
 
+**Disclaimer**
+For the Open LLM Leaderboard datasets, we could not match the leaderboard numbers exactly using [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) even when seeing the whole set of items and using the version specified by the leaderboard maintainers. Moreover, for convenience, we advise users (see datasets cards on our [HuggingFace community](https://huggingface.co/tinyBenchmarks)) to use a more modern version of [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness), which can create divergences with the numbers presented in the leaderboard. We expect *tinyBenchmarks* to still work well in that case, but use our tools at your own risk.
+
+
 <a name="3"></a>
 ## Performance 
 
-We report in the following tables the average estimation error in the test set and standard deviation across LLMs.
+We report in the following tables the average estimation error in the test set (using data from the paper) and standard deviation across LLMs.
 
 #### Open LLM Leaderboard
 
