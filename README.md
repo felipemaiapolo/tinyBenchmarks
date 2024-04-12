@@ -37,45 +37,25 @@ You can install our package by running the following commands on the terminal
 $ pip install git+https://github.com/felipemaiapolo/tinyBenchmarks
 ```
 
-Now, you can estimate the performance of a specific LLM on any tiny dataset or benchmark in our [HuggingFace community](https://huggingface.co/tinyBenchmarks) using the code below. If you want to evaluate a new LLM on the whole Open LLM Leaderboard or HELM Lite benchmarks, please set `benchmark='lb'` or `benchmark='helm_lite'` instead of estimating the performance of individual scenarios separately. In this way, the ability parameter $\theta$ from the IRT model will be estimated using all the available data. For `benchmark='lb'` or `benchmark='helm_lite'`, the dimension of `y` should be 600 and 1000, respectively, where the correctness values must obey the following order 
-- For the Open LLM Leaderboard: TruthfulQA, GSM8K, Winogrande, ARC, HellaSwag, and MMLU;
-- For HELM Lite: OpenbookQA, GSM(8K), MedQA, LegalBench, Math, MMLU, NarrativeQA, NaturalQA (closed-book), NaturalQA (open-book), and WMT14.
-
-For all other, benchmarks the dimension of `y` should be 100.
+Now, you can estimate the performance of a specific LLM on any tiny dataset or benchmark in our [HuggingFace community](https://huggingface.co/tinyBenchmarks) using the code below. If you want to evaluate a new LLM on the whole Open LLM Leaderboard or HELM Lite benchmarks, please estimate the performance of individual scenarios separately and then properly combine the scores. For example, for the Open LLM Leaderboard, the final score should be the average score across scenarios. For all scenarios the dimension of `y` below should be 100.
 
 ```python
 import numpy as np
 import tinyBenchmarks as tb
 
 ### Parameters
-benchmark = 'lb' # choose from possible benchmarks in
-                 # ['lb','mmlu','alpaca','helm_lite','truthfulqa',
-                 #  'gsm8k', 'winogrande', 'arc', 'hellaswag']
+benchmark = 'mmlu' # choose from possible benchmarks in (HELM scenarios will be added)
+                   # ['mmlu','alpaca','truthfulqa',
+                   #  'gsm8k', 'winogrande', 'arc', 'hellaswag']
 
-y = np.random.binomial(1,.5, 600) # dummy data (unidimensional numpy array)
-                                  # In this example, y has dimension 600 because we
-                                  # observe 100 examples from each Open LLM Leaderboard scenario)
+y = np.random.binomial(1,.5, 100) # dummy data (unidimensional numpy array)
+                                 
 
 ### Evaluation
 tb.evaluate(y, benchmark)
 ```
 
-    {'harness_truthfulqa_mc_0': {'irt': 0.5483476132190942,
-      'pirt': 0.5216756041366227,
-      'gpirt': 0.5350116086778585},
-     'gsm8k': {'irt': 0.5132676269901439,
-      'pirt': 0.5328183759663551,
-      'gpirt': 0.5230430014782494},
-     'winogrande': {'irt': 0.4301499605367009,
-      'pirt': 0.4792754277690377,
-      'gpirt': 0.4547126941528693},
-     'arc': {'irt': 0.5520477815699659,
-      'pirt': 0.5066457168990404,
-      'gpirt': 0.5293467492345032},
-     'hellaswag': {'irt': 0.5338577972515436,
-      'pirt': 0.5108037778592825,
-      'gpirt': 0.5223307875554131},
-     'mmlu': {'irt': 0.5377958382081949,
+    {'mmlu': {'irt': 0.5377958382081949,
       'pirt': 0.5393624918280722,
       'gpirt': 0.5385791650181335}}
 
@@ -90,7 +70,6 @@ We report in the following tables the average estimation error in the test set (
 
 #### Open LLM Leaderboard
 
-Estimating performance for each scenario separately
 || IRT | p-IRT | gp-IRT |
 |--|--|--|--|
 | TruthfulQA | 0.013 (0.010) | 0.010 (0.009) | 0.011 (0.009) |
@@ -100,15 +79,6 @@ Estimating performance for each scenario separately
 | HellaSwag | 0.013 (0.016) | 0.015 (0.012) | 0.015 (0.012) |
 | MMLU | 0.024 (0.017) | 0.016 (0.015) | 0.016 (0.015) |
 
-Estimating performance for each scenario all at once
-|| IRT | p-IRT | gp-IRT |
-|--|--|--|--|
-| TruthfulQA  | 0.013 (0.010) | 0.016 (0.013) | 0.011 (0.009) |
-| GSM8K | 0.022 (0.017) | 0.022 (0.017) | 0.020 (0.015) |
-| Winogrande | 0.022 (0.017) | 0.011 (0.013) | 0.011 (0.011) |
-| ARC | 0.022 (0.018) | 0.012 (0.010) | 0.010 (0.009) |
-| HellaSwag | 0.013 (0.016) | 0.011 (0.020) | 0.011 (0.018) |
-| MMLU | 0.024 (0.018) | 0.017 (0.017) | 0.015 (0.015) |
 
 #### AlpacaEval 2.0
 || IRT | p-IRT | gp-IRT |
