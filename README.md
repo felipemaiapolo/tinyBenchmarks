@@ -9,10 +9,9 @@ Welcome to the [*tinyBenchmarks* GitHub repository](https://github.com/felipemai
 1. [ Datasets ](#1)
 2. [ Estimating the performance of a new LLM using our package  ](#2)
 3. [ Performance  ](#3)
-4. [ Citing ](#4)
-5. [ Contribution and License ](#5)
-
-
+4. [ Computing performances for all scenarios at once ](#4)
+5. [ Citing ](#5)
+   
 
 --------------
 
@@ -90,6 +89,11 @@ We report in the following tables the average estimation error in the test set (
 As we conduct 11-fold cross-validation (CV) with HELM Lite, the test set only contains three models, making the error estimate not meaningful. Please check Appendix D.2 of our paper for CV error estimates.
 
 <a name="4"></a>
+## Computing performances for all scenarios at once
+
+In our paper, we comment that is beneficial to estimate the ability parameter $\theta$ for a LLM of interest using data from all scenarios. Moreover, this is what we do for the Open LLM Leaderboard in our tutorials. Unfortunately, the current version of the tinyBenchmarks datasets on HuggingFace does not permit this feature, because tinyMMLU was generated separately. In the next version of tinyBenchmarks, we intend to unify tinyMMLU with other tiny datasets to enable this feature.
+    
+<a name="5"></a>
 ## Citing
 If you use any material from this repository in your academic work, please cite
 
@@ -100,7 +104,6 @@ If you use any material from this repository in your academic work, please cite
       year={2024}
     }
 
-<a name="5"></a>
 ## Contribution and License
 
 Feel free to fork this repository and submit pull requests to contribute to this project. If you encounter any issues or have suggestions, please open an issue in this repository.
